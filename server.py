@@ -22,4 +22,5 @@ def serve_static(filename):
     return send_from_directory(BASE_DIR, filename)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)
